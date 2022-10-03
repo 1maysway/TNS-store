@@ -1,0 +1,92 @@
+﻿@using TNS_store2.Models
+@{
+    ViewData["Title"] = "Cart";
+}
+
+@model IEnumerable<TNS_store2.Models.Product>
+
+<div class="tns-cart">
+    <div class="row tns-cart-body flex-column flex-md-row">
+    <div class="col col-md-8 tns-cart-body-left">
+        <ul class="list-group">
+            @foreach (var item in @Model)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-start tns-cart-body-left-item p-4 border-0 ps-0 pe-0 pe-md-4" id="@item.Id">
+                        <input id="Id_@item.Id" type="hidden" value="@item.Id" />
+                        <input id="Name_@item.Id" type="hidden" value="@item.Name" />
+                        <input id="Price_@item.Id" type="hidden" value="@item.Price" />
+                        <input id="ImageUrl_@item.Id" type="hidden" value="@item.ImageUrl" />
+                    <div class="row tns-cart-body-left-item-body pb-2">
+                        <div class="col-12 col-sm-auto d-flex justify-content-center align-items-center pb-3 pb-sm-0">
+                            <a class="tns-cart-item-img-container" asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">
+                                <img src="@item.ImageUrl">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="tns-cart-body-left-item-mid">
+                                <div class="ms-2 me-auto tns-cart-item-name">
+                                    <a class="fw-bold tns-btn-hover" style="font-weight: normal !important;" asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a>
+                                </div>
+                                <div class="tns-cart-item-delete ms-2 pt-4">
+                                    <a class="fw-bold removeFromCart tns-btn-hover tns-btn-ajax" id="@item.Id" style="font-size: 14px; font-weight: normal !important;" asp-action="RemoveFromCart" asp-controller="Home" asp-route-id="@item.Id">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-auto">
+                            
+                        </div>*@
+                        <div class="col-auto">
+                            <div class="tns-cart-body-left-item-price">
+                                <div class="tns-cart-item-totalPrice pb-4" style="font-weight:bold">
+                                    @(@item.Price * @ViewBag.Cart[@item.Id]) $
+                                </div>
+                                <div class="tns-cart-item-number-input" style="user-select: none;">
+                                        <a class="input-number-btn decrement tns-btn-ajax" id="@item.Id" asp-action="DecrementCartItem" asp-controller="Home" asp-route-id="@item.Id">–</a>
+                                        <input class="input-number p-1" id="@item.Id" type="text" value="@ViewBag.Cart[@item.Id]" min="1" readonly>
+                                        <a class="input-number-btn increment tns-btn-ajax" id="@item.Id" asp-action="AddToCart" asp-controller="Home" asp-route-id="@item.Id">+</a>
+                                </div>
+                                <div class="originalPrice pt-1" style="opacity: 0; font-size: 12px; color: #999999; user-select: none;">
+                                    @item.Price ₽/шт
+                                </div>
+                            </div>
+                        </div>
+                        @*<span class="badge bg-primary rounded-pill">@ViewBag.Cart[@item.Id]</span>*@
+                    </div>
+                </li>
+            }
+        </ul>
+</div>
+<div class="col tns-cart-body-right">
+        <div class="tns-cart-body-right-inner p-4 pe-0 ps-0 ps-md-4">
+            <div class="tns-cart-body-right-inner-head pb-4">
+                <span style="font-size: 18px; font-weight: bold;">Условия заказа</span>
+            </div>
+            <div class="tns-cart-body-right-inner-body">
+                <div class="tns-cart-body-right-inner-body-body pb-4">
+                    <div class="products_sum">
+                        <div class="products_sum_title">
+                            <span style="font-size: 12px; color:#8C8C8C">Итого:</span>
+                        </div>
+                        <div class="products_sum_value">
+                            <span style="font-size: 18px; font-weight: bold;">@ViewBag.Count Товар</span>
+                    </div>
+                    </div>
+                    <div class="total_price">
+                            <div class="total_price_value">
+                                <span style="font-size: 18px; font-weight: bold;">@ViewBag.TotalPrice $</span>
+                            </div>
+                    </div>
+                </div>
+                    <div class="tns-cart-body-right-inner-body-checkout">
+                        <div class="checkout-btn">
+                            <a class="btn btn-primary tns-btn tns-btn-primary px-3 py-2" asp-action="Checkout" asp-controller="Home">Оформить заказ</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<p>Total: @ViewBag.TotalPrice</p>
+

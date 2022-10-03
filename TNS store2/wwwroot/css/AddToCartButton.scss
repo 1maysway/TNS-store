@@ -1,0 +1,159 @@
+﻿/*body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebe8ff;
+}*/
+
+.cart-button {
+    position: relative;
+    padding: 10px;
+    //width: 200px;
+    height: 42px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    background-color: #007bff;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    span{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.cart-button:hover {
+    background-color: #258eff;
+}
+
+.cart-button:active {
+    transform: scale(.9);
+}
+
+.cart-button .shopping-cart {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -10%;
+    font-size: 2em;
+    transform: translate(-50%,-50%);
+}
+
+.cart-button .box {
+    position: absolute;
+    z-index: 3;
+    top: -20%;
+    left: 50.5%;
+    font-size: 1.1em;
+    transform: translate(-50%,-50%);
+}
+
+.cart-button span {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    font-size: 1.2em;
+    color: #fff;
+    transform: translate(-50%,-50%);
+}
+
+.cart-button span.add-to-cart {
+    opacity: 1;
+}
+
+.cart-button span.added {
+    opacity: 0;
+}
+
+.cart-button.clicked .shopping-cart {
+    animation: cart 2s ease-in-out forwards;
+}
+
+.cart-button.clicked .box {
+    animation: box 2s ease-in-out forwards;
+}
+
+.cart-button.clicked span.add-to-cart {
+    animation: txt1 2s ease-in-out forwards;
+}
+
+.cart-button.clicked span.added {
+    animation: txt2 2s ease-in-out forwards;
+}
+
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+
+    40%, 65% {
+        left: 50%;
+    }
+    100% {
+        left: 110%;
+    }
+}
+
+@keyframes box {
+    0%, 40% {
+        top: -20%;
+    }
+
+    60%, 65% {
+        top: 40%;
+        left: 50.5%;
+    }
+
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}
+
+@keyframes txt1 {
+    0% {
+        opacity: 1;
+    }
+
+    20%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes txt2 {
+    0%, 80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.youtube-link {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}
+.shopping-cart{
+    color: white;
+}
+.box {
+    color: white;
+}

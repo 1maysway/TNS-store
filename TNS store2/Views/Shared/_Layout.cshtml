@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TNS_store2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/TNS_store2.styles.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="~/css/style.scss" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/logoButton.scss" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ImageZoom.scss" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/NumberInput.scss" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/AddToCartButton.scss" asp-append-version="true" />
+</head>
+<body>
+    <!-- Login -->
+    <div class="offcanvas offcanvas-end tns-login-form-end" tabindex="-1" id="offcanvasEnd" aria-labelledby="offcanvasEndLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasEndLabel">Получайте бонусы, сохраняйте и отслеживайте заказы.</h5>
+            <button type="button" class="btn-close text-reset tns-login-form-end-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body tns-login-form-end-body">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </form>
+        </div>
+    </div>
+    <header style="position: sticky; top:0; z-index: 101;">
+        <nav class="navbar navbar-expand-lg bg-light tns-navbar" style="background: white !important;">
+        <div class="container-fluid container-lg">
+                <div class="row m-0" style="width: 100%;">
+            <!-- <a class="navbar-brand tns-nav-logo col-auto ps-0 m-0" href="#">TNS</a> -->
+            <div class="button_su col-auto p-0 m-0">
+                <span class="su_button_circle">
+                </span>
+                <a class="button_su_inner navbar-brand tns-nav-logo" asp-action="Index" asp-controller="Home">
+                    <span class="button_text_container">
+                    TNS
+                  </span>
+                </a>
+            </div>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> -->
+            @*</button>*@
+            <div class="navbar-collapse tns-nav-collapse row col-12 col-lg-10 m-0 p-0" id="navbarSupportedContent">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form class="d-flex col p-0 pe-lg-3 rounded-2 tns-search-form m-0 ms-lg-2" style="background: white" asp-controller="Home" asp-action="Search" role="search">
+                    <!-- <input class="form-control me-2 tns-search searchTerm" type="search" placeholder="Search" aria-label="Search"> -->
+                    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                    <input class="tns-search searchTerm ps-3" type="search" placeholder="Search" aria-label="Search" name="search" value="@ViewData["search"]">
+                    <button type="submit" class="searchButton" style="background: white">
+                        <ion-icon name="search-outline" size="large" style="background: white"></ion-icon>
+                     </button>
+
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0 col-auto d-none d-lg-flex tns-nav-buttons pe-0 ps-2">
+                    <li class="nav-item">
+                        <a class="nav-link tns-btn-hover ms-1 ms-xl-2" aria-current="page" href="#">Избранное</a>
+                    </li>
+                    <li class="nav-item">
+                        <vc:cart>
+                            
+                        </vc:cart>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <!-- <button type="button" class="btn btn-primary dropdown-toggle ms-1 ms-xl-2" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                              Войти
+                            </button>
+                        <form class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end p-4 tns-dropdown-login">
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                    <label class="form-check-label" for="dropdownCheck2">
+                                    Remember me
+                                  </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form> -->
+
+                        <button class="btn btn-primary tns-login-btn-end ms-1 ms-xl-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="offcanvasEnd">Войти</button>
+
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li> -->
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    </nav>
+
+    </header>
+    @*<div class="container">
+        <main role="main" class="pb-3">*@
+            <div class="container-lg tns-container">
+                @RenderBody()
+            </div>
+    @*    </main>
+    </div>*@
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - TNS_store2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/logoButton.js"></script>
+    <script src="~/js/ImageZoom.js"></script>
+    <script src="~/js/NumberInput.js"></script>
+    <script src="~/js/AddToCartButton.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

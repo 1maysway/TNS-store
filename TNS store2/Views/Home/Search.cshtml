@@ -1,0 +1,83 @@
+﻿@using TNS_store2.Models
+
+@model List<Product>
+
+    
+<div class="tns-search">
+    <div class="tns-search-head">
+        <h3 class="tns-search-find-head-title">Найдено: @Model.Count</h3>
+    </div>
+        <div class="row">
+            <div class="col-12 col-lg-3 tns-search-options pb-3 pb-lg-0">
+                <div class="tns-search-options-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <form asp-controller="Home" asp-action="Search" role="search">
+                        <input name="search" type="hidden" value="@ViewData["search"]"/>
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Price
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show tns-search-options-collapse-show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body tns-search-options-price ps-2 pe-2">
+                                            <input name="priceMin" type="number" class="form-control" min="@ViewData["placeholdrePriceMin"]" placeholder="от @ViewData["placeholdrePriceMin"]" value="@ViewData["priceMin"]">
+                                            <input name="priceMax" type="number" class="form-control ms-2" min="@ViewData["placeholdrePriceMin"]" placeholder="до @ViewData["placeholdrePriceMax"]" value="@ViewData["priceMax"]">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary mt-3 tns-search-options-submit-btn" value="Применить"/>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-12 col-lg-9">
+                <div class="row tns-search-products m-0">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 tns-search-item p-4 mb-3">
+                    <div class="row tns-search-item-inner flex-column flex-sm-row">
+                        <div class="col-12 col-sm-4 col-xl-3 tns-search-item-inner-img-container">
+                            <a asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">
+                                <img src="@item.ImageUrl" alt="@item.Name">
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-8 col-xl-9 tns-search-item-inner-body pt-3 pt-sm-0">
+                            <div class="row flex-column flex-sm-row">
+                                <div class="col">
+                                    <div class="row tns-search-item-inner-info pb-sm-3 flex-column flex-sm-row">
+                                <div class="col tns-search-item-inner-title">
+                                  <a class="tns-btn-hover" asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">
+                                        @item.Name
+                                  </a>
+                                </div>
+                            </div>
+                                </div>
+                                
+                            <div class="col-auto tns-search-item-inner-buy flex-row flex-sm-column pt-2 pt-sm-0 justify-content-between justify-content-sm-end">
+                                <div class=" tns-search-item-inner-price mb-2">
+                                    <span>@item.Price Р</span>
+                                </div>
+                                        <div class="tns-search-item-inner-buttons">
+                                            <a class="p-2 ms-2">
+                                                <ion-icon name="heart-outline"></ion-icon>
+                                            </a>
+                                            <a class="p-2 ms-2 tns-addToCartBtn addToCart tns-btn-ajax" asp-action="AddToCart" asp-controller="Home" asp-route-returnUrl="@Context.Request.Path" asp-route-id="@item.Id" asp-route-search="@ViewData["search"]" asp-route-priceMin="@ViewData["priceMin"]" asp-route-priceMax="@ViewData["priceMax"]">
+                                                <ion-icon class="addToCartIcon" name="cart-outline"></ion-icon>
+                                                <ion-icon class="adedToCartIcon" name="checkmark-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+            </div>
+            
+        </div>
+    </div>

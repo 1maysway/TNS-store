@@ -1,0 +1,104 @@
+﻿@using TNS_store2.Models
+
+
+@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="tns-branch my-3">
+    <ul>
+        <li class="me-2">
+            <a class="tns-btn-hover" asp-action="Index" asp-controller="Home">
+                Главная
+            </a>
+            <ion-icon name="remove-outline" class="ms-2"></ion-icon>
+        </li>
+        <li class="me-2">
+            <a class="tns-btn-hover" asp-action="Search" asp-controller="Home" asp-route-search="@ViewBag.CategoryName">
+                @ViewBag.CategoryName
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="tns-product p-4 px-0">
+     
+    <div class="tns-product-head pb-3 d-block d-xl-none">
+                    <div class="tns-product-title">
+                        <h3>@Model.Name</h3>
+                    </div>
+                    <div class="tns-product-review">
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                    </div>
+                </div>
+    <div class="row tns-product-inner flex-column flex-md-row">
+        
+        <div class="col-12 col-md-auto">
+            <div class="tns-product-img-container zoomable-image px-5 px-md-0"> 
+                <img src="@Model.ImageUrl" class=""/>
+            </div>
+        </div>
+       
+        <div class="col">
+                <div class="tns-product-head pb-3 d-none d-xl-block">
+                    <div class="tns-product-title">
+                        <h3>@Model.Name</h3>
+                    </div>
+                    <div class="tns-product-review">
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                        <span><ion-icon name="star"></ion-icon></span>
+                    </div>
+                </div>
+                <div class="row tns-product-body align-items-end flex-column-reverse flex-xl-row">
+        
+                
+                <div class="col-12 col-xl-8 mt-5 mt-xl-0">
+            
+                    <p class="description">@Model.Description</p>
+                
+                </div>
+                <div class="col-12 col-xl-4 tns-product-body-right pt-3 pt-md-0">
+                        <span class="price pb-3">@Model.Price ₽</span>
+                        @*<form asp-action="AddToCart" asp-controller="Home" asp-route-id="@Model.Id">*@
+                            @*<a class="btn btn-primary px-5 py-2 tns-btn-ajax" style="font-size: 16px;" asp-action="AddToCart" asp-controller="Home" asp-route-id="@Model.Id">Купить</a>*@
+                        @*</form>*@
+                        <a class="cart-button addToCart tns-btn-ajax" id="liveToastBtn"  asp-action="AddToCart" asp-controller="Home" asp-route-id="@Model.Id">
+	                        <span style="font-size: 16px;" class="add-to-cart">Купить</span>
+	                        <span style="font-size: 16px;" class="added">В корзине</span>
+                            
+                            <ion-icon class="fas box" name="cube"></ion-icon>
+                            <ion-icon class="fas shopping-cart" name="cart-outline"></ion-icon>
+                        </a>
+
+                </div>
+        
+                </div>
+        
+        </div>
+    </div>
+
+</div>
+
+                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header justify-content-start align-items-start">
+      <img src="@Model.ImageUrl" class="rounded me-2" style="height: 100px; width: 100px; object-fit: contain;" alt="...">
+      <div class="d-flex justify-content-between align-items-center flex-column">
+          <strong class="me-auto">TNS Store</strong>
+          <span>Новый товар добавлен в корзину!</span>
+          <a asp-action="Cart" asp-controller="Home" class="tns-btn-hover w-100 flex-grow-1 pt-2" style="text-decoration: none; color:black;">Перейти в корзину</a>
+      </div>
+      <button type="button" class="btn-close" style="z-index: 100;" data-bs-dismiss="toast" aria-label="Close"></button>
+      
+    </div>
+    
+  </div>
+</div>

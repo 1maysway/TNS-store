@@ -1,0 +1,1520 @@
+﻿@using TNS_store2.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Product>
+
+
+<!-- Container -->
+    @*<div class="container-lg tns-container">*@
+        <!-- <div style="position: absolute; top: 167; height: 100px; width: 100px; background-color: red; z-index: 1001;"></div> -->
+        <div class="row flex-column-reverse flex-lg-row tns-main-container">
+            <div class="col-12 col-lg-3 pt-2 pb-2 tns-category-panel">
+                <div class="card" id="tns-category-card">
+                    <!-- <div class="card-header">
+                        <h5 class="card-title">Категории</h5>
+                    </div> -->
+                    <div class="card-body p-2 ps-0 pe-0">
+                        <ul class="list-group list-group-flush tns-list-group">
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-group-item tns-list-item tns-drop dropend tns-category-list-item p-2">
+                                <div class="btn-group tns-btn-group-category ms-2">
+                                    <ion-icon class="d-none d-xl-block" name="cube-outline" size="large"></ion-icon>
+                                    <div class="tns-category-list-item-body ps-2 m-0 ms-xl-3">
+                                        <div class="tns-category-list-item-body-header">
+                                            <h6 class="tns-list-item-text tns-btn-hover tns-category-list-body-header m-0">Бытовая техника</h6>
+                                        </div>
+                                        <div class="tns-category-list-item-body-text">
+                                            <a class="tns-btn-hover pe-1" href="">для дома</a>
+                                            <a class="tns-btn-hover pe-1" href="">уход за собой</a>
+                                        </div>
+                                    </div>
+                                    <ul class="dropdown-menu tns-drop-menu p-4">
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                        <li class="tns-drop-menu-category">
+                                            <a class="dropdown-header tns-category-header tns-btn-hover" href="">
+                                               Техника для кухни
+                                            </a>
+                                            <div class="row g-1 tns-drop-menu-list p-3">
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление пищи</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление напитков</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Холодильное оборудование</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посудомоечные машины</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Встраиваемая техника</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Нарезка, смешивание, упаковка</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Приготовление десертов</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Измерения</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Прочие товары для кухни</a>
+                                                <a href="" class="col-6 tns-drop-menu-list-item tns-btn-hover">Посуда и кухонные товары</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9 pt-2 pb-2 tns-main-right">
+                <div class="row">
+                    <div class="col-12 col-lg-7 col-xl-8">
+                        <div id="tns-carousel-first" class="carousel carousel-dark slide rounded-2" data-bs-ride="carousel">
+                            <div class="carousel-indicators d-none d-md-flex">
+                                <button type="button" data-bs-target="#tns-carousel-first" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#tns-carousel-first" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#tns-carousel-first" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded-2">
+                                <div class="carousel-item active" data-bs-interval="10000">
+                                    <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="2000">
+                                    <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev tns-control prev" type="button" data-bs-target="#tns-carousel-first" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon tns-control-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                            <button class="carousel-control-next tns-control next" type="button" data-bs-target="#tns-carousel-first" data-bs-slide="next">
+                                <span class="carousel-control-next-icon tns-control-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="col-5 col-xl-4 d-none d-lg-block">
+                        <div class="card tns-card">
+                            <div class="card-body tns-card-body">
+                                <a href="" class="tns-btn-hover">
+                                    <h5 class="card-title tns-catd-title">
+                                        <p>Акции</p>
+                                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                                    </h5>
+                                </a>
+                                <a class="card-text tns-card-text tns-btn-hover" href="">
+                                    <p class="mb-1 mb-xl-3">
+                                        <ion-icon name="remove-outline" style="color:#007bff;"></ion-icon>Скидки и предложения
+                                    </p>
+                                </a>
+                                <a class="card-text tns-card-text tns-btn-hover" href="">
+                                    <p class="mb-1 mb-xl-3">
+                                        <ion-icon name="remove-outline" style="color:#007bff;"></ion-icon>Рассрочка или выгода
+                                    </p>
+                                </a>
+                                <a class="card-text tns-card-text tns-btn-hover" href="">
+                                    <p class="mb-1 mb-xl-3">
+                                        <ion-icon name="remove-outline" style="color:#007bff;"></ion-icon>Выгодные комплекты
+                                    </p>
+                                </a>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tns-actual pt-2 pb-2">
+                    <div class="tns-actual-title pt-2 pb-2">
+                        <h4>Актуальные предложения</h4>
+                    </div>
+
+                    <div class="tns-actual-body p-4 rounded-2" style="border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 5px;">
+
+                        <div class="tns-actual-category p-3 ps-0">
+                            <div class="row">
+                                <a href="" class="tns-actual-category-btn selected p-lg-0 ms-3 me-3 pt-2 pb-2 tns-btn-hover">Всё для учебы</a>
+                                <a href="" class="tns-actual-category-btn p-lg-0 ms-3 me-3 pt-2 pb-2 tns-btn-hover">Зима близко</a>
+                                <a href="" class="tns-actual-category-btn p-lg-0 ms-3 me-3 pt-2 pb-2 tns-btn-hover">Будь на связи</a>
+                                <a href="" class="tns-actual-category-btn p-lg-0 ms-3 me-3 pt-2 pb-2 tns-btn-hover">Осенние заготовки</a>
+                            </div>
+                        </div>
+
+                        <div id="tns-carousel-actual" class="carousel carousel-dark slide rounded-2" data-bs-ride="carousel">
+                            <!-- <div class="carousel-indicators d-none d-md-flex">
+                                <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div> -->
+                            <div class="carousel-inner rounded-2">
+                                <div class="carousel-item active tns-carousel-item tns-actual-item" data-bs-interval="100000">
+                                    <!-- <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div> -->
+                                    <div class="row tns-actual-slide">
+                                        <div class="tns-actual-slide-card card mb-3 p-0 col-12 col-sm-6 col-xl-4 pe-sm-4" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/100/100/9994b673de2bb1ccd0264032a0637775/784f22c34e15d836d0ff28a81f2143661de66ead526d83f24d46028ea25b2581.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Струйные принтеры</h5>
+                                                        <b class="card-text tns-actual-card-price">от 24 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tns-actual-slide-card card mb-3 p-0 col-6 col-xl-4 pe-4 d-sm-flex d-none" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/9c4a95a97ca1533836a11d10b3a70fa6/dc79b0f5828b2a1861f5e7af3e14971995c69d29ebc7cec796aaebe985bf912a.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Мониторы</h5>
+                                                        <b class="card-text tns-actual-card-price">от 6 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tns-actual-slide-card card mb-3 p-0 col-4 d-none d-xl-flex" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/dec68f22d6299a71c2007e285fa1094e/f143a4857d3b5d8da5e2f4b86543893a94db4a336c4c1e2f3ca860284251e8f8.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Планшеты</h5>
+                                                        <b class="card-text tns-actual-card-price">от 3 490 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item tns-carousel-item tns-actual-item" data-bs-interval="2000">
+                                    <div class="row tns-actual-slide">
+                                        <div class="card mb-3 p-0 col-12 col-sm-6 col-xl-4 pe-sm-4" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/100/100/9994b673de2bb1ccd0264032a0637775/784f22c34e15d836d0ff28a81f2143661de66ead526d83f24d46028ea25b2581.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Струйные принтеры</h5>
+                                                        <b class="card-text tns-actual-card-price">от 24 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3 p-0 col-6 col-xl-4 pe-4 d-sm-flex d-none" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/9c4a95a97ca1533836a11d10b3a70fa6/dc79b0f5828b2a1861f5e7af3e14971995c69d29ebc7cec796aaebe985bf912a.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Мониторы</h5>
+                                                        <b class="card-text tns-actual-card-price">от 6 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3 p-0 col-4 d-none d-xl-flex" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/dec68f22d6299a71c2007e285fa1094e/f143a4857d3b5d8da5e2f4b86543893a94db4a336c4c1e2f3ca860284251e8f8.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Планшеты</h5>
+                                                        <b class="card-text tns-actual-card-price">от 3 490 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item tns-carousel-item tns-actual-item">
+                                    <div class="row tns-actual-slide">
+                                        <div class="card mb-3 p-0 col-12 col-sm-6 col-xl-4 pe-sm-4" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/100/100/9994b673de2bb1ccd0264032a0637775/784f22c34e15d836d0ff28a81f2143661de66ead526d83f24d46028ea25b2581.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Струйные принтеры</h5>
+                                                        <b class="card-text tns-actual-card-price">от 24 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3 p-0 col-6 col-xl-4 pe-4 d-sm-flex d-none" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-5 col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/9c4a95a97ca1533836a11d10b3a70fa6/dc79b0f5828b2a1861f5e7af3e14971995c69d29ebc7cec796aaebe985bf912a.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-7 col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Мониторы</h5>
+                                                        <b class="card-text tns-actual-card-price">от 6 990 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3 p-0 col-4 d-none d-xl-flex" style="max-width: 540px;">
+                                            <div class="row g-0">
+                                                <div class="col-md-5 h-100 tns-actual-slide-img">
+                                                    <img src="https://c.dns-shop.ru/thumb/st4/fit/100/100/dec68f22d6299a71c2007e285fa1094e/f143a4857d3b5d8da5e2f4b86543893a94db4a336c4c1e2f3ca860284251e8f8.jpg.webp" class="img-fluid rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-md-7 h-100">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tns-btn-hover">Планшеты</h5>
+                                                        <b class="card-text tns-actual-card-price">от 3 490 Р</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev tns-control prev" type="button" data-bs-target="#tns-carousel-actual" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon tns-control-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next tns-control next" type="button" data-bs-target="#tns-carousel-actual" data-bs-slide="next">
+                              <span class="carousel-control-next-icon tns-control-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row tns-main-auth pt-2 pb-3 pb-md-0">
+                    <div class="col-12 col-md-6 tns-main-auth-item pt-3 pt-md-0">
+                        <div class="tns-main-auth-item-body p-3">
+                            <div class="row">
+                                <div class="col-xxl-9 tns-main-auth-item-body-left">
+                                    <h4 class="header">Привет!</h4>
+                                    <p class="text">Получай бонусы и спецпредложения, сохраняй и отслеживай заказы</p>
+                                    <div class="links flex-column flex-xxl-row">
+                                        <a class="tns-btn-hover pe-2" href="">
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>Перейти в профиль</a>
+                                        <a class="tns-btn-hover pe-2" href="">
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>Мои заказы</a>
+                                    </div>
+                                </div>
+                                <div class="col-3 tns-main-auth-item-body-right d-none d-xxl-flex">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 tns-main-auth-item pt-3 pt-md-0">
+                        <div class="tns-main-auth-item-body p-3">
+                            <div class="row">
+                                <div class="col-xxl-9 tns-main-auth-item-body-left">
+                                    <h4 class="header">Собери свой ПК</h4>
+                                    <p class="text">Простой инструмент без проблем с совместимостью</p>
+                                    <div class="links flex-column flex-xxl-row">
+                                        <a class="tns-btn-hover pe-2" href="">
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>Собрать ПК</a>
+                                        <a class="tns-btn-hover pe-2" href="">
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>Сборки пользователей</a>
+                                    </div>
+                                </div>
+                                <div class="col-3 tns-main-auth-item-body-right d-none d-xxl-flex">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tns-second-container">
+            <div class="row tns-brand-panel">
+                <div class="tns-brand-panel-body">
+                    <div id="tns-carousel-brand" class="carousel carousel-dark slide rounded-2" data-bs-ride="carousel">
+                        <!-- <div class="carousel-indicators d-none d-md-flex">
+                        <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#tns-carousel-actual" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div> -->
+                        <div class="carousel-inner rounded-2">
+                            <div class="carousel-item active tns-carousel-item" data-bs-interval="100000">
+                                <!-- <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div> -->
+                                <div class="row tns-carousel-brand-slide row-cols-auto m-0 pt-2 pb-2">
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/a2a4a16a5beac2ca56e05ee963c8041e/1855efad27ee3e34f761c6326542d2ab1f6e3fcaf48580cf25eca973b74b0f82.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/182c8616dac17f5face5fa0b979490d1/a46ab65955b8a302eda27327b6a2eda91cb9c838beaab15bde3d81407175fb2e.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/70008e50c471677aefd3ecd7bfa34681/38b8a8ba411563dc41ea84b672fb2f67061015328f47d592e47038dadf4c2b50.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/69c042237c8079d8c0d120a145155fe6/caeae0011d80dd375ca9d336f129c9f5a2f13c29b576ca8a63badbe71d6140b1.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/2bbe55eb849e4cee094ca49e1671dfdf/e33fc4ce0a7da0010b9fbd46342e0fb5fdeb0bcdeb40fa2225783476efa66698.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/885127d82641c8a50b5b98d2df61cbc9/cb16d1a357d23b24f94b13038e553a66bc2d1166411c034a2d78178e5076c504.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/c5b1ca028a3abc1c86f8973262b281b1/1b9387ea1457615107abd95b2376fea5a966676ff19144a816113dd1d6870405.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/0641977f2fc708a2af24f73c6994b932/9e608281aa9a08df174d33bbae398f2acdefeb5f3e3697d869c35f93c9be412e.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/120c5c81e14980007cb1a51069b5780c/5d509869715c5bd276b263a39a1f3cddc0b4e7e2192f09251df277ec8e3f6439.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <a class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/750fb903d8e3a3c240787098b69ced5e/c69fd93cca9d465426836942449a34e5d54681539ba439f3b153bc42d6261916.png" class="img-fluid rounded-start" alt="...">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item tns-carousel-item" data-bs-interval="100000">
+                                <!-- <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div> -->
+                                <div class="row tns-carousel-brand-slide row-cols-auto m-0 pt-2 pb-2">
+                                    <div class="tns-carousel-category-brand-slide-item ps-0 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/a2a4a16a5beac2ca56e05ee963c8041e/1855efad27ee3e34f761c6326542d2ab1f6e3fcaf48580cf25eca973b74b0f82.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/182c8616dac17f5face5fa0b979490d1/a46ab65955b8a302eda27327b6a2eda91cb9c838beaab15bde3d81407175fb2e.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/70008e50c471677aefd3ecd7bfa34681/38b8a8ba411563dc41ea84b672fb2f67061015328f47d592e47038dadf4c2b50.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/69c042237c8079d8c0d120a145155fe6/caeae0011d80dd375ca9d336f129c9f5a2f13c29b576ca8a63badbe71d6140b1.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/2bbe55eb849e4cee094ca49e1671dfdf/e33fc4ce0a7da0010b9fbd46342e0fb5fdeb0bcdeb40fa2225783476efa66698.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/885127d82641c8a50b5b98d2df61cbc9/cb16d1a357d23b24f94b13038e553a66bc2d1166411c034a2d78178e5076c504.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/c5b1ca028a3abc1c86f8973262b281b1/1b9387ea1457615107abd95b2376fea5a966676ff19144a816113dd1d6870405.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/0641977f2fc708a2af24f73c6994b932/9e608281aa9a08df174d33bbae398f2acdefeb5f3e3697d869c35f93c9be412e.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/120c5c81e14980007cb1a51069b5780c/5d509869715c5bd276b263a39a1f3cddc0b4e7e2192f09251df277ec8e3f6439.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item p-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/750fb903d8e3a3c240787098b69ced5e/c69fd93cca9d465426836942449a34e5d54681539ba439f3b153bc42d6261916.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item tns-carousel-item" data-bs-interval="100000">
+                                <!-- <img src="https://www.werian.in/wp-content/uploads/2019/10/580x220.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div> -->
+                                <div class="row tns-carousel-brand-slide row-cols-auto m-0 pt-2 pb-2">
+                                    <div class="tns-carousel-category-brand-slide-item ps-0 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/a2a4a16a5beac2ca56e05ee963c8041e/1855efad27ee3e34f761c6326542d2ab1f6e3fcaf48580cf25eca973b74b0f82.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/182c8616dac17f5face5fa0b979490d1/a46ab65955b8a302eda27327b6a2eda91cb9c838beaab15bde3d81407175fb2e.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/70008e50c471677aefd3ecd7bfa34681/38b8a8ba411563dc41ea84b672fb2f67061015328f47d592e47038dadf4c2b50.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/69c042237c8079d8c0d120a145155fe6/caeae0011d80dd375ca9d336f129c9f5a2f13c29b576ca8a63badbe71d6140b1.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/2bbe55eb849e4cee094ca49e1671dfdf/e33fc4ce0a7da0010b9fbd46342e0fb5fdeb0bcdeb40fa2225783476efa66698.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/885127d82641c8a50b5b98d2df61cbc9/cb16d1a357d23b24f94b13038e553a66bc2d1166411c034a2d78178e5076c504.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/c5b1ca028a3abc1c86f8973262b281b1/1b9387ea1457615107abd95b2376fea5a966676ff19144a816113dd1d6870405.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/0641977f2fc708a2af24f73c6994b932/9e608281aa9a08df174d33bbae398f2acdefeb5f3e3697d869c35f93c9be412e.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-1">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st1/fit/105/35/120c5c81e14980007cb1a51069b5780c/5d509869715c5bd276b263a39a1f3cddc0b4e7e2192f09251df277ec8e3f6439.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tns-carousel-category-brand-slide-item ps-1 pe-0">
+                                        <div class="card mb-3 p-0 col-auto" style="max-width: 540px;">
+                                            <div class="tns-carousel-brand-card-inner h-100 p-3">
+                                                <img src="https://c.dns-shop.ru/thumb/st4/fit/105/35/750fb903d8e3a3c240787098b69ced5e/c69fd93cca9d465426836942449a34e5d54681539ba439f3b153bc42d6261916.png" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev tns-control prev" type="button" data-bs-target="#tns-carousel-brand" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon tns-control-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                        <button class="carousel-control-next tns-control next" type="button" data-bs-target="#tns-carousel-brand" data-bs-slide="next">
+                      <span class="carousel-control-next-icon tns-control-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            @if(@ViewBag.ProductsHistory!=null)
+            {
+                <div class="tns-history" id="tns-history">
+                <h3 class="tns-history-head mb-4 mt-3">
+                    Вы недавно смотрели
+                </h3>
+                <div class="tns-history-body p-4">
+
+                    <div class="row tns-history-inner">
+                        
+                        @foreach(var item in @ViewBag.ProductsHistory)
+                {
+                    
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 ps-0 pt-4 pt-xl-0 pe-0 pe-sm-4 tns-history-item" style="position:relative;">
+                        <a class="btn-close tns-close-button tns-btn-ajax" aria-label="Close" style="position: absolute; right:24px; z-index: 100;" asp-action="RemoveHistoryItem" asp-controller="Home" asp-route-id="@item.Id"></a>
+                        <div class="tns-history-inner-item">
+                            
+                            <div class="col-3 tns-history-inner-item-head">
+                                <a asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">
+                                    <img src="@item.ImageUrl" alt="">
+                                </a>
+                            </div>
+                            <div class="col-lg-3 tns-history-inner-item-body pt-3">
+                                <a class="tns-history-inner-item-body-head mb-3 tns-btn-hover" asp-action="Product" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a>
+                                <div class="row tns-history-inner-item-body-bottom m-0">
+                                    <div class="col-auto tns-history-inner-item-body-bottom-price p-0">
+                                        <h5>@item.Price Р</h5>
+                                        <p>от 341 Р/мес.</p>
+                                    </div>
+                                    <div class="col-auto tns-history-inner-item-body-bottom-buttons p-0">
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </a>
+                                        <a class="p-2 ms-2 tns-addToCartBtn addToCart tns-btn-ajax" asp-action="AddToCart" asp-controller="Home" asp-route-returnUrl="@Context.Request.Path" asp-route-id="@item.Id" asp-route-search="@ViewData["search"]" asp-route-priceMin="@ViewData["priceMin"]" asp-route-priceMax="@ViewData["priceMax"]">
+                                                <ion-icon class="addToCartIcon" name="cart-outline"></ion-icon>
+                                                <ion-icon class="adedToCartIcon" name="checkmark-outline"></ion-icon>
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                }
+                @*<div class="col-12 col-sm-6 col-md-4 col-lg-3 tns-history-inner-item ps-0 pt-4 pt-sm-0 pe-0 pe-sm-4">
+                            <button type="button" class="btn-close tns-close-button" aria-label="Close" style="position: absolute; right:24px;"></button>
+                            <div class="col-3 tns-history-inner-item-head">
+                                <a href="">
+                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/160/160/b69ec42f25aabd1c348300ed5a9f4a22/a499e4c4d3a12495e93b9488c2e4aa41c02f77e6763310c3763ef3eeefe03c00.jpg.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-3 tns-history-inner-item-body pt-3">
+                                <h6 class="tns-history-inner-item-body-head mb-3 tns-btn-hover">Крепление для мониторов NB F80 [17" - 30", до 9 кг, VESA - 75 x 75, 100 x 100, черный]</h6>
+                                <div class="row tns-history-inner-item-body-bottom m-0">
+                                    <div class="col-auto tns-history-inner-item-body-bottom-price p-0">
+                                        <h5>3 499 Р</h5>
+                                        <p>от 341 Р/мес.</p>
+                                    </div>
+                                    <div class="col-auto tns-history-inner-item-body-bottom-buttons p-0">
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </a>
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="cart-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 tns-history-inner-item ps-0 pe-4 d-none d-md-flex">
+                            <button type="button" class="btn-close tns-close-button" aria-label="Close" style="position: absolute; right:24px;"></button>
+                            <div class="col-3 tns-history-inner-item-head">
+                                <a href="">
+                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/160/160/b69ec42f25aabd1c348300ed5a9f4a22/a499e4c4d3a12495e93b9488c2e4aa41c02f77e6763310c3763ef3eeefe03c00.jpg.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="col-3 tns-history-inner-item-body pt-3">
+                                <h6 class="tns-history-inner-item-body-head mb-3 tns-btn-hover">Крепление для мониторов NB F80 [17" - 30", до 9 кг, VESA - 75 x 75, 100 x 100, черный]</h6>
+                                <div class="row tns-history-inner-item-body-bottom m-0">
+                                    <div class="col-auto tns-history-inner-item-body-bottom-price p-0">
+                                        <h5>3 499 Р</h5>
+                                        <p>от 341 Р/мес.</p>
+                                    </div>
+                                    <div class="col-auto tns-history-inner-item-body-bottom-buttons p-0">
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </a>
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="cart-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 tns-history-inner-item ps-0 pe-4 d-none d-lg-flex">
+                            <button type="button" class="btn-close tns-close-button" aria-label="Close" style="position: absolute; right:24px;"></button>
+                            <div class="col-3 tns-history-inner-item-head">
+                                <a asp-action="Product" asp-controller="Product" asp-route-id="2">
+                                    <img src="https://c.dns-shop.ru/thumb/st1/fit/160/160/b69ec42f25aabd1c348300ed5a9f4a22/a499e4c4d3a12495e93b9488c2e4aa41c02f77e6763310c3763ef3eeefe03c00.jpg.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="col-3 tns-history-inner-item-body pt-3">
+                                <a asp-action="Product" asp-controller="Product" asp-route-id="2" class="tns-history-inner-item-body-head mb-3 tns-btn-hover">Крепление для мониторов NB F80 [17" - 30", до 9 кг, VESA - 75 x 75, 100 x 100, черный]</a>
+                                <div class="row tns-history-inner-item-body-bottom m-0">
+                                    <div class="col-auto tns-history-inner-item-body-bottom-price p-0">
+                                        <h5>3 499 Р</h5>
+                                        <p>от 341 Р/мес.</p>
+                                    </div>
+                                    <div class="col-auto tns-history-inner-item-body-bottom-buttons p-0">
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </a>
+                                        <a class="p-2 ms-2" href="">
+                                            <ion-icon name="cart-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+     
+
+@section Scripts
+{
+    <script>
+        tnsCategoryPanel();
+
+function tnsCategoryPanel() {
+    let marginRight = parseInt($('.tns-container').css('margin-right'));
+    let tnsDrop = $('#tns-category-card').find('.tns-drop')[0];
+
+    $('#tns-category-card').find('.dropdown-menu').css('height', $(".tns-category-panel").height());
+    $('#tns-category-card').find('.dropdown-menu').css('width', $('.tns-container').width() - $(".tns-category-panel").width() + "px");
+    $('#tns-category-card').find('.dropdown-menu').css('left', $(tnsDrop).position().left + $(tnsDrop).width() + parseInt($(tnsDrop).css('padding-left')) + 5);
+}
+
+// width onchange
+$(window).resize(function () {
+
+    tnsCategoryPanel();
+});
+    </script>
+}

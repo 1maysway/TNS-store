@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Product>
+
+<form class="d-flex me-3" role="search">
+        <a asp-action="Cart" asp-controller="Home" class="position-relative nav-link tns-btn-hover ms-1 ms-xl-2 border-0 tns-cartButton" style="color:black; background: none;">
+          Корзина
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger tns-cartButton-count" style="display: none;">
+            @ViewBag.Count
+            @*<span class="visually-hidden">unread messages</span>*@
+          </span>
+        </a>
+      </form>
+
+        
